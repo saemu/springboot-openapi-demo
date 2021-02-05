@@ -11,4 +11,9 @@
         <module>api</module>
         <module>app</module>
     </modules>
+    <properties>
+        <sonar.projectKey>saemu_springboot-openapi-demo</sonar.projectKey>
+        <sonar.organization>saemu</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    </properties>
 </project>
