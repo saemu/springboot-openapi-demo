@@ -24,6 +24,25 @@ paths:
               schema:
                 type: string
                 example: "Hello World"
+    post:
+      tags:
+        - demo
+      summary: "shows greeting to person"
+      operationId: helloPost
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/person'
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/greeting'
+
   /hello/{name}:
     get:
       tags:
@@ -44,3 +63,19 @@ paths:
               schema:
                 type: string
                 example: "Hello ${name}"
+components:
+  schemas:
+    person:
+      type: object
+      properties:
+        title:
+          type: string
+        firstname:
+          type: string
+        lastname:
+          type: string
+    greeting:
+      type: object
+      properties:
+        text:
+          type: string
