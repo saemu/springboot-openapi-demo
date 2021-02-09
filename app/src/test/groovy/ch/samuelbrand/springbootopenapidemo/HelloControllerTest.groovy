@@ -34,10 +34,10 @@ class HelloControllerTest extends Specification {
     def "helloPost"() {
         given:
         final def controller = new HelloController()
-        final def person = new Person()
-        person.setFirstname(firstname)
-        person.setLastname(lastname)
-        person.setTitle(title)
+        final def person = Mock(Person)
+        person.getFirstname() >> firstname
+        person.getLastname() >> lastname
+        person.getTitle() >> title
 
         when:
         final def request = controller.helloPost(person)
