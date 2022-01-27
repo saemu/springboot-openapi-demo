@@ -51,6 +51,16 @@ class HelloControllerTest extends Specification {
         firstname | lastname | title
         "James"   | "Bond"   | "Mr."
         "Daisy"   | "Duck"   | "Mrs."
+    }
 
+    def "helloPost_null"() {
+        given:
+        final def controller = new HelloController()
+
+        when:
+        final def request = controller.helloPost(null)
+
+        then:
+        thrown(NullPointerException)
     }
 }
