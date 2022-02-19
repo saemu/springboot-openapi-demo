@@ -3,6 +3,6 @@ springdoc:
     enabled: true
     path: /api-docs
   swagger-ui:
-    url: /api.yaml
+    url: /openapi.yaml
     enabled: true
     path: /swagger-ui.html
